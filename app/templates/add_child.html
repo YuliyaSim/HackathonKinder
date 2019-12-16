@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('{{ url_for('static', filename='hero_1.jpg') }}')">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h5 text-red">Registration</span>
+                    <h1 class="mb-3 font-weight-bold text-teal">Add your child</h1>
+                    <p><a href="{{ url_for('index') }}" class="text-white">Home</a> <span class="mx-3">/</span> <strong>Contact</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section bg-light" id="contact-section">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-7 text-center mb-5">
+                <h2>You Can Register Your Child Here</h2>
+                <p>Please make sure not to share private information of your child!</p>
+            </div>
+        </div>
+
+        {% block content %}
+
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-6 text-center mb-4">
+                    <form method="POST" class="form-inline my-2 my-lg-0">
+                        {{ child_form.hidden_tag() }}
+                        {{ child_form.nickname.label }} {{ child_form.nickname(size=50) }}<br>
+                        {% if child_form.nickname.errors %}
+
+                        <ul>
+                            {% for error in child_form.nickname.errors %}
+                            <li class="alert alert-danger w=25"> {{ child_form.nickname.label }} : {{ err }} </li>
+                        </ul>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+
+                        {{ child_form.age.label }} {{ child_form.age(size=50) }}<br>
+                        {% if child_form.age.errors %}
+                        <div class="form-group row">
+                            <div class="col-md-12 mr-auto">
+                                <ul>
+                                    {% for error in child_form.age.errors %}
+                                    <li class="alert alert-danger w=25"> {{ child_form.age.label }} : {{ err }} </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+                        {{ child_form.gender.label }} {{ child_form.gender(size=50) }}<br>
+                        {% if child_form.gender.errors %}
+                        <div class="form-group row">
+                            <div class="col-md-12 mr-auto">
+                                <ul>
+                                    {% for error in child_form.gender.errors %}
+                                    <li class="alert alert-danger w=25"> {{ child_form.gender.label }} : {{ err }} </li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+                        {{ child_form.language.label }} {{ child_form.language(size=50) }}<br>
+                        {% if child_form.language.errors %}
+                        <ul>
+                            {% for error in child_form.language.errors %}
+                            <li class="alert alert-danger w=25"> {{ child_form.language.label }} : {{ err }} </li>
+                        </ul>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+                        {{ child_form.activity1.label }} {{ child_form.activity1(size=50) }}<br>
+                        {% if child_form.activity1.errors %}
+                        <ul>
+                            {% for error in child_form.activity1.errors %}
+                            <li class="alert alert-danger w=25"> {{ child_form.activity1.label }} : {{ err }} </li>
+                        </ul>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+                        {{ child_form.activity2.label }} {{ child_form.activity2(size=50) }}<br>
+                        {% if child_form.activity2.errors %}
+                        <ul>
+                            {% for error in child_form.activity2.errors %}
+                            <li class="alert alert-danger w=25"> {{ child_form.activity2.label }} : {{ err }} </li>
+                        </ul>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+                        {{ child_form.activity3.label }} {{ child_form.activity3(size=50) }}<br>
+                        {% if child_form.activity3.errors %}
+                        <ul>
+                            {% for error in child_form.activity3.errors %}
+                            <li class="alert alert-danger w=25"> {{ child_form.activity3.label }} : {{ err }} </li>
+                        </ul>
+                        {% endfor %}
+                        <br>
+                        {% endif %}
+                        <br>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Child</button>
+                    </form>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+/div>
+
+{% endblock %}
+
+

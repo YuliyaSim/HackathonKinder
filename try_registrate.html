@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+            <form name="addForm" id="addForm" method="POST" action="{{ url_for('addpost') }}" novalidate>
+            <form action="{{ url_for('registration') }}" method="post" name="registration">
+              <div class="form-group row">
+                <div class="col-md-6 mb-4 mb-lg-0">
+                  <input type="text" class="form-control" name="first_name" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" name="last_name" placeholder="Last name">
+                </div>
+              </div>
+
+               <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="username" placeholder="Username">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="email" placeholder="Email address">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="password" placeholder="Password">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="address_street" placeholder="Street">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="address_city" placeholder="City">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="address_country" placeholder="Country">
+                </div>
+              </div>
+
+
+              <div class="form-group row">
+                <div class="col-md-12 mr-auto">
+                  <input type="submit" class="btn btn-block btn-primary text-white py-3 px-5" value="Register">
+                </div>
+              </div>
+            </form>
+
+</body>
+</html>
+
+
+
+<!--                            {{ child_form.age.label }} {{ child_form.age(size=50) }}<br>-->
+<!--                            {% if child_form.age.errors %}-->
+<!--                            <div class="form-group row">-->
+<!--                                <div class="col-md-12 mr-auto">-->
+<!--                                    <ul>-->
+<!--                                        {% for error in child_form.age.errors %}-->
+<!--                                        <li class="alert alert-danger w=25"> {{ child_form.age.label }} : {{ err }} </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            {% endfor %}-->
+<!--                            <br>-->
+<!--                            {% endif %}-->
+<!--                            {{ child_form.gender.label }} {{ child_form.gender(size=50) }}<br>-->
+<!--                            {% if child_form.gender.errors %}-->
+<!--                            <div class="form-group row">-->
+<!--                                <div class="col-md-12 mr-auto">-->
+<!--                                    <ul>-->
+<!--                                        {% for error in child_form.gender.errors %}-->
+<!--                                        <li class="alert alert-danger w=25"> {{ child_form.gender.label }} : {{ err }} </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            {% endfor %}-->
+<!--                            <br>-->
+<!--                            {% endif %}-->
+<!--                            {{ child_form.language.label }} {{ child_form.language(size=50) }}<br>-->
+<!--                            {% if child_form.language.errors %}-->
+<!--                            <ul>-->
+<!--                                {% for error in child_form.language.errors %}-->
+<!--                                <li class="alert alert-danger w=25"> {{ child_form.language.label }} : {{ err }} </li>-->
+<!--                            </ul>-->
+<!--                            {% endfor %}-->
+<!--                            <br>-->
+<!--                            {% endif %}-->
+<!--                            {{ child_form.activity1.label }} {{ child_form.activity1(size=50) }}<br>-->
+<!--                            {% if child_form.activity1.errors %}-->
+<!--                            <ul>-->
+<!--                                {% for error in child_form.activity1.errors %}-->
+<!--                                <li class="alert alert-danger w=25"> {{ child_form.activity1.label }} : {{ err }} </li>-->
+<!--                            </ul>-->
+<!--                            {% endfor %}-->
+<!--                            <br>-->
+<!--                            {% endif %}-->
+<!--                            {{ child_form.activity2.label }} {{ child_form.activity2(size=50) }}<br>-->
+<!--                            {% if child_form.activity2.errors %}-->
+<!--                            <ul>-->
+<!--                                {% for error in child_form.activity2.errors %}-->
+<!--                                <li class="alert alert-danger w=25"> {{ child_form.activity2.label }} : {{ err }} </li>-->
+<!--                            </ul>-->
+<!--                            {% endfor %}-->
+<!--                            <br>-->
+<!--                            {% endif %}-->
+<!--                            {{ child_form.activity3.label }} {{ child_form.activity3(size=50) }}<br>-->
+<!--                            {% if child_form.activity3.errors %}-->
+<!--                            <ul>-->
+<!--                                {% for error in child_form.activity3.errors %}-->
+<!--                                <li class="alert alert-danger w=25"> {{ child_form.activity3.label }} : {{ err }} </li>-->
+<!--                            </ul>-->
+<!--                            {% endfor %}-->
+<!--                            <br>-->
+<!--                            {% endif %}-->
+<!--                            <br>-->

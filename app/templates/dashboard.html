@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('{{ url_for('static', filename='hero_1.jpg') }}')">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-7 mt-5 pt-5">
+                    <span class="text-cursive h5 text-red">Dashboard</span>
+                    <h1 class="mb-3 font-weight-bold text-teal">List of Children here</h1>
+                    <p><a href="{{ url_for('index') }}" class="text-white">Home</a> <span class="mx-3">/</span> <strong>Contact</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
