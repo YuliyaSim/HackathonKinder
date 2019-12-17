@@ -8,7 +8,7 @@
                 <div class="col-md-7 mt-5 pt-5">
                     <h1 class="mb-3 font-weight-bold text-teal"></h1>
                     <span class="text-cursive h3 text-red">Welcome {{ current_user.username }}!</span> <br> <br>
-                    <h1>Find Your Kid's Next Best Friend Here</h1>
+                    <h1>Cool Ideas For Playdates</h1>
                     <p><a href="{{ url_for('index') }}" class="text-white">Home</a> <span class="mx-3">/</span> <a href="{{ url_for('contact') }}" class="text-white">Contact</a></p>
                 </div>
             </div>
@@ -19,27 +19,23 @@
     <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-7 text-center mb-5">
-                <span class="text-cursive h5 text-red">Our talents</span>
-                <h2>Here are kids with similar interests</h2>
+                <span class="text-cursive h5 text-red">Enjoy</span>
+                <h2>Our recommended partners</h2>
                 <div class="page-header">
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Nickname</th>
-                            <th>Age</th>
-                            <th>Interest</th>
-                            <th>Interest</th>
-                            <th>Interest</th>
+                            <th>Activity</th>
+                            <th>Business</th>
+                            <th>Connect</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {% for child in children %}
+                        {% for activity in activities %}
                         <tr>
-                            <td>{{ child.nickname }}</td>
-                            <td>{{ child.age }}</td>
-                            <td>{{ child.activity1 }}</td>
-                            <td>{{ child.activity2 }}</td>
-                            <td>{{ child.activity3 }}</td>
+                            <td>{{ activity.activity }}</td>
+                            <td>{{ activity.business }}</td>
+                            <td>{{ activity.business_link }}</td>
                         </tr>
                         {% endfor %}
                         </tbody>

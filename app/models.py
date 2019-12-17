@@ -24,3 +24,10 @@ class Child(db.Model, UserMixin):
     activity1 = db.Column(db.String, nullable=False)
     activity2 = db.Column(db.String, nullable=False)
     activity3 = db.Column(db.String, nullable=False)
+
+
+class Activity(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    activity = db.Column(db.String, nullable=False)
+    business = db.Column(db.String, nullable=False)
+    business_link = db.Column(db.String, nullable=False)

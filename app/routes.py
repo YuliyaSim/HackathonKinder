@@ -1,9 +1,9 @@
 from flask import render_template, url_for
-from flask_login import LoginManager, login_user
+from flask_login import LoginManager, login_user,login_required,current_user
 from werkzeug.utils import redirect
 
 from app import app, db, login_manager
-from app.models import User, Child
+from app.models import User, Child, Activity
 from app.forms import RegisterForm, AddChild, LoginForm
 
 
@@ -60,13 +60,20 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    children = Child.query.all()
+    return render_template('dashboard.html',children=children)
+
+@app.route('/activities')
+def activities():
+    activities = Activity.query.all()
+    return render_template('activities.html', activities=activities)
 
 
+@login_required
 @app.route('/profile/<int:user_id>', methods=['GET', 'POST'])
 def profile(user_id):
     children = Child.query.filter_by(user_id=user_id)
-    return render_template('profile.html',children=children)
+    return render_template('profile.html', children=children)
 
 
 @app.route('/addchild', methods=['GET', 'POST'])
@@ -81,11 +88,12 @@ def addchild():
                           language=form.language.data,
                           activity1=form.activity1.data,
                           activity2=form.activity2.data,
-                          activity3=form.activity3.data
+                          activity3=form.activity3.data,
+                          user_id = current_user.id
                           )
         db.session.add(new_child)
         db.session.commit()
-        return redirect(url_for('profile',user_id=new_child.user_id))
+        return redirect(url_for('profile', user_id=new_child.user_id))
     else:
         print(form.errors)
 
